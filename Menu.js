@@ -9,3 +9,5 @@ $(document).ready( function() {
     $('#css-menu').css({right:'-340px'});
 });
  });
+// External Link
+ $(document).ready(function(){$("a[href^='http://']").each(function(){-1==this.href.indexOf(location.hostname)&&$(this).attr("target","_blank")}),$("a[href^='https://']").each(function(){-1==this.href.indexOf(location.hostname)&&$(this).attr("target","_blank")})});
