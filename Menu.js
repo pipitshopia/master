@@ -15,3 +15,29 @@ $(document).ready( function() {
 function scrollToTop(){verticalOffset="undefined"!=typeof verticalOffset?verticalOffset:0,element=$("body"),offset=element.offset(),offsetTop=offset.top,$("html, body").animate({scrollTop:offsetTop},600,"linear")}$(function(){$(document).on("scroll",function(){$(window).scrollTop()>100?$(".smoothscroll-top").addClass("show"):$(".smoothscroll-top").removeClass("show")}),$(".smoothscroll-top").on("click",scrollToTop)});
 //Sticky Popular
 $(function(){if($("#PopularPosts1").length){var o=$("#PopularPosts1"),t=$("#PopularPosts1").offset().top,i=$("#PopularPosts1").height();$(window).scroll(function(){var s=$("#banner728-bottom").offset().top-i-20,n=$(window).scrollTop(),f=$(window).width();if(n>t&&f>759?o.css({position:"fixed",top:60}):o.css("position","static"),n>s){var c=s-n;o.css({top:c})}})}});
+//Disqus
+var disqus_shortname="fotobogil";
+var disqus_url = disqus_blogger_current_url;
+
+(function () {
+    "use strict";
+    var get_comment_block = function () {
+        var block = document.getElementById('comments');
+        if (!block) {
+            block = document.getElementById('disqus-blogger-comment-block');
+        }
+        return block;
+    };
+    var comment_block = get_comment_block();
+    if (!!comment_block) {
+        var disqus_div = document.createElement('div');
+        disqus_div.id = 'disqus_thread';
+        comment_block.innerHTML = '';
+        comment_block.appendChild(disqus_div);
+        comment_block.style.display = 'block';
+        var dsq = document.createElement('script');
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.body).appendChild(dsq);
+    }
+})();
