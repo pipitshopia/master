@@ -16,30 +16,5 @@ function scrollToTop(){verticalOffset="undefined"!=typeof verticalOffset?vertica
 //Sticky Popular
 $(function(){if($("#PopularPosts1").length){var o=$("#PopularPosts1"),t=$("#PopularPosts1").offset().top,i=$("#PopularPosts1").height();$(window).scroll(function(){var s=$("#banner728-bottom").offset().top-i-20,n=$(window).scrollTop(),f=$(window).width();if(n>t&&f>759?o.css({position:"fixed",top:60}):o.css("position","static"),n>s){var c=s-n;o.css({top:c})}})}});
 //Disqus
-var disqus_shortname="fotobogil";
-var disqus_url = disqus_blogger_current_url;
-
-(function () {
-    "use strict";
-    var get_comment_block = function () {
-        var block = document.getElementById('comments');
-        if (!block) {
-            block = document.getElementById('disqus-blogger-comment-block');
-        }
-        return block;
-    };
-    var comment_block = get_comment_block();
-    if (!!comment_block) {
-        var disqus_div = document.createElement('div');
-        disqus_div.id = 'disqus_thread';
-        comment_block.innerHTML = '';
-        comment_block.appendChild(disqus_div);
-        comment_block.style.display = 'block';
-        var dsq = document.createElement('script');
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.body).appendChild(dsq);
-    }
-})();
-
+var disqus_shortname="fotobogil",disqus_url=disqus_blogger_current_url;!function(){"use strict";var e=function(){var e=document.getElementById("comments");return e||(e=document.getElementById("disqus-blogger-comment-block")),e},t=e();if(t){var d=document.createElement("div");d.id="disqus_thread",t.innerHTML="",t.appendChild(d),t.style.display="block";var n=document.createElement("script");n.async=!0,n.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.body).appendChild(n)}}();
 !function(){var e=document.createElement(&quot;script&quot;);e.type=&quot;text/javascript&quot;,e.async=!0,e.src=&quot;//&quot;+disqus_shortname+&quot;.disqus.com/blogger_item.js&quot;,(document.getElementsByTagName(&quot;head&quot;)[0]||document.getElementsByTagName(&quot;body&quot;)[0]).appendChild(e)}();
